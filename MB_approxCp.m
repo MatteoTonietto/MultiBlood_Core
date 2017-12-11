@@ -1,4 +1,4 @@
-function info = approxCp(par,info)
+function info = MB_approxCp(par,info)
 
 try    
     yPPf = modelPPf(par,info,info.tCtot);    
@@ -12,9 +12,3 @@ end
 info.tCp = info.tCtot;
 info.Cp  = info.Ctot.*yPPf;
 info.wCp = info.wCtot./yPPf;
-
-if isfield(info,'QCtot')
-    for i = 1 : length(info.QCtot)
-        info.QCp(i) = {sparse(diag(diag(info.QCtot{i})./(yPPf.^2)))};
-    end
-end

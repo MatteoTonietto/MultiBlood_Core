@@ -1,4 +1,4 @@
-function info = approxCmet(par,info)
+function info = MB_approxCmet(par,info)
 
 tCtot = info.tCtot;
 Ctot  = info.Ctot;

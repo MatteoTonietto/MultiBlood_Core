@@ -1,11 +1,4 @@
-function info = basesCp(par,info)
-
-% Unpack
-% par_struct = formatPar(par,info);
-% t0 = par_struct.t0;
-% T  = par_struct.T;
-% 
-% l0 = par_struct.l0;
+function info = MB_basesCp(par,info)
 
 l0 = par(1);
 t0 = par(2);
@@ -17,17 +10,11 @@ wCp = info.wCp;
 
 % Grid Cp
 %--------------------------------------------------------------------------
-try 
-    lambdagrid = info.lambdagrid;
-    ncompl     = length(lambdagrid);   
-catch
-    try lambda1 = info.lambda1; catch, lambda1 = 0.0001;  end
-    try lambda2 = info.lambda2; catch, lambda2 = l0*0.99; end               
-    try ncompl  = info.ncompl;  catch, ncompl  = 500;    end
+lambda2 = l0*0.99;            
+ncompl  = info.ncompl;
     
-    lambdagrid  = logspace(log10(lambda1),log10(lambda2),ncompl)';  
-    lambdagrid(1) = 0;
-end
+lambdagrid    = logspace(log10(info.lambda1),log10(lambda2),ncompl)';
+lambdagrid(1) = 0;
 
 % Bases
 %--------------------------------------------------------------------------

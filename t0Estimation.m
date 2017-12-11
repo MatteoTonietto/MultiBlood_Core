@@ -44,8 +44,6 @@ while iter && change
         change = false;
     end
 
-
-    
 %     h = figure(1);
 %     plot(t,z,'o')
 %     hold on
