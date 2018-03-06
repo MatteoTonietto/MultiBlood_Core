@@ -32,7 +32,7 @@ est.p0        = par0_Cp;
 est.pup       = inf(size(est.p0));
 est.pdown     = zeros(size(est.p0));
 
-est.options.plot        = 0;
+% est.options.plot        = 1;
 est.options.Jac         = 'off';
 est.options.Display     = 'off';
 est.options.MaxFunEvals = 1;

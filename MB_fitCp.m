@@ -29,6 +29,7 @@ est.p0              = p0;
 est.pup             = pup;
 est.pdown           = pdown;
 est.options.Display = 'iter';
+% est.options.plot = 1;
 
 est_Cp = SingleSubjectModelFit(est);
 
