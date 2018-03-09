@@ -3,6 +3,7 @@ function info = MB_approxCp(par,info)
 try    
     yPPf = modelPPf(par,info,info.tCtot);    
 catch
+    disp('No PPf model available: linear interpolation used')
     yPPf = interp1([0;info.tPPf],[1;info.PPf],info.tCtot,'linear','extrap');
     if any(yPPf<0)
         yPPf = interp1([0;info.tPPf],[1;info.PPf],info.tCtot,'linear',info.PPf(end));
